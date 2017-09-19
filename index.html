@@ -1,0 +1,84 @@
+<!Doctype html>
+<html>
+    <title></title>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- jQuery -->
+        <!--<script src="dist/jquery/dist/jquery.min.js"></script>
+    
+        <script src="dist/js/bootstrap.min.js"></script>
+        <link href="dist/css/bootstrap.min.css" rel="stylesheet">-->
+        
+        <style>
+            body
+            {
+                background:url("./pic/shape 7.svg");
+                margin:0;
+            }
+            .pizza
+            {
+                width:300px;
+            }
+            .menu
+            {
+               z-index: 3;
+               position:relative;
+               top:-280px;
+            }
+            .menu>.row
+            {
+               padding-bottom:50px;
+            }
+            div.menu>div>div>button.btn
+            {
+                z-index: 4;
+                position:relative;
+                top:-63px;
+                width: 250px;
+                border-radius: 15px !important;
+            }
+            .footer
+            {
+                background-color: #d9534f;
+            }
+        </style>
+    </head>
+    <body>
+        <!--<div class="col-sm-12">-->
+            <img src="./pic/banner.png"  class="img-responsive">
+        <!--</div>-->
+        <div class="menu text-center">
+            <div class="row">
+                <div class="col-sm-4">
+                    <img class="pizza" src="./pic/1.png">
+                    <button type="button" class="btn btn-danger">Pork Adobo Rice Pizza<br>P0.00</button>
+                </div>
+                <div class="col-sm-4">
+                    <img class="pizza" src="./pic/2.png">
+                    <button type="button" class="btn btn-danger">Pork Adobo Rice Pizza<br>P0.00</button>
+                </div>
+                <div class="col-sm-4">
+                    <img class="pizza" src="./pic/3.png">
+                    <button type="button" class="btn btn-danger">Pork Adobo Rice Pizza<br>P0.00</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <img class="pizza" src="./pic/5.png"><br>
+                    <button type="button" class="btn btn-danger">Pork Adobo Rice Pizza<br>P0.00</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <img src="./pic/footer.png"  class="img-responsive">
+        </div>
+    </body>
+</html>
