@@ -18,8 +18,6 @@
         <script src="scripts.js"></script>
         <link href="dist/css/bootstrap.min.css" rel="stylesheet">
         
-        <link rel="stylesheet" href="assets/css/teamslide.css" />
-        <link rel="stylesheet" href="assets/css/plugins.css" />
         <style>
             body
             {
@@ -83,7 +81,174 @@
                 transition: 0.8s;
                 -webkit-transition:  0.8s;
             }
+
+
+
+            h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #303030;
+      font-weight: 600;
+      margin-bottom: 30px;
+  }
+  h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+  }  
+  .jumbotron {
+      background-color: #f4511e;
+      color: #fff;
+      padding: 100px 25px;
+      font-family: Montserrat, sans-serif;
+  }
+  .container-fluid {
+      padding: 60px 50px;
+  }
+  .bg-grey {
+      background-color: #f6f6f6;
+  }
+  .logo-small {
+      color: #f4511e;
+      font-size: 50px;
+  }
+  .logo {
+      color: #f4511e;
+      font-size: 200px;
+  }
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+  .thumbnail img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+      background-image: none;
+      color: #f4511e;
+  }
+  .carousel-indicators li {
+      border-color: #f4511e;
+  }
+  .carousel-indicators li.active {
+      background-color: #f4511e;
+  }
+  .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+  }
+  .item span {
+      font-style: normal;
+  }
+  .panel {
+      border: 1px solid #f4511e; 
+      border-radius:0 !important;
+      transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+      border: 1px solid #f4511e;
+      background-color: #fff !important;
+      color: #f4511e;
+  }
+  .panel-heading {
+      color: #fff !important;
+      background-color: #f4511e !important;
+      padding: 25px;
+      border-bottom: 1px solid transparent;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+      background-color: white !important;
+  }
+  .panel-footer h3 {
+      font-size: 32px;
+  }
+  .panel-footer h4 {
+      color: #aaa;
+      font-size: 14px;
+  }
+  .panel-footer .btn {
+      margin: 15px 0;
+      background-color: #f4511e;
+      color: #fff;
+  }
+  .navbar {
+      margin-bottom: 0;
+      background-color: #f4511e;
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+      color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: #f4511e !important;
+      background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+      color: #fff !important;
+  }
+  footer .glyphicon {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #f4511e;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+      animation-name: slide;
+      -webkit-animation-name: slide;
+      animation-duration: 1s;
+      -webkit-animation-duration: 1s;
+      visibility: visible;
+  }
         </style>
+        <script>
+        $(document).ready(function(){
+            // Add smooth scrolling to all links
+            $("a").on('click', function(event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function(){
+            
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+                } // End if
+            });
+        });
+
+        </script>
     </head>
     <body data-spy="scroll">
         <nav id="header" class="navbar navbar-fixed-top" style="background-color: black;">
@@ -95,11 +260,11 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a id="brand" class="navbar-brand" href="#">Rice N' Slice</a>
+                    <a id="brand" class="navbar-brand" href="#home">Rice N' Slice</a>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
+                        <li class="active"><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#products">Products</a></li>
                     </ul>
@@ -108,10 +273,63 @@
         </nav><!-- /.navbar -->
 
         <!--<div class="col-sm-12">-->
-        <img src="./pic/banner.png"  class="img-responsive">
+        <img src="./pic/banner.png" id="home" class="img-responsive">
+
+        <div id="about" class="container-fluid">
+            <div class="row">
+                <div class="col-sm-8">
+                <h2>About Us</h2><br>
+                <h4>Rice N’ Slice is a startup pizza store business. The business introduces an innovation which it calls ‘rice crusted pizza’ as its main menu. It also sells refreshing drinks and beverages with its main menu.</h4><br>
+                <p>
+                    Unlike traditional pizzas that use flour and yeast to make dough for its crust, Rice N’ Slice uses mixtures of eggs, cornstarch and cooked rice to make the crusts of its rice pizzas. Its rice crusted pizzas are topped and flavored with all-time favorite Filipino dishes including 4 initial flavors of pork adobo, bangus sisig, lechon kawali and pinoy style barbecue. 
+                </p>
+                <p>
+                    Rice crusted pizzas are sold as a whole or in slices. In addition, Rice N’ Slice provides its dine-in customers a cozy spot to eat rice crusted pizzas in its food house, and for customers taking out orders it offers rice crusted pizzas in neat boxes. 
+
+                </p>
+                </div>
+            </div>
+            </div>
+
+            <div class="container-fluid bg-grey">
+            <div class="row">
+                <div class="col-sm-4">
+                <span class="glyphicon glyphicon-globe logo slideanim"></span>
+                </div>
+                <div class="col-sm-8">
+                <h2>Our Values</h2><br>
+                <h4>
+                    <strong>MISSION:</strong> 
+                    Rice N’ Slice’s mission is to delight and satisfy customers by offering satiating and delectable rice pizzas at an affordable price while maintaining its excellent quality.
+                </h4>
+                <br>
+                <p>
+                    <strong>VISION:</strong> 
+                    Rice N’ Slice is committed to be recognized as the best pizza chain that sells the most delicious rice pizzas in the country, to establish branches all over the country, and eventually to be able to compete in the global stage, by showcasing its Filipino branded products.
+                </p>
+                <br>
+                <p>
+                    <strong>Our values:</strong> 
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To provide pizza loving customers healthier gluten-free rice pizzas <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To promote the use of rice in making dough, breads and alike<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To be able to compete globally<br />
+
+                </p>
+                </div>
+            </div>
+        </div>
+        
+            <br/ ><br/ ><br/ >
+            
+            <br/ ><br/ ><br/ >
+            
+            <br/ ><br/ ><br/ >
         <!--</div>-->
-        <div id="products" class="menu text-center">
-            <br/ ><br/ ><br/ ><br/ ><br/ ><br/ >
+        <div id="products" class="menu container-fluid  text-center">
+            
+            <br/ ><br/ ><br/ >
+            <h2>Our Products</h3><br>
             <div class="row">
                 <div class="col-sm-4">
                     <img class="pizza" src="./pic/1.png">
@@ -133,8 +351,10 @@
                 </div>
             </div>
         </div>
+
         <div class="footer">
             <img src="./pic/footer.png"  class="img-responsive">
+         
         </div>
     </body>
 </html>
